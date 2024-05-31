@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   minio:
-    image: minio/minio:latest
+    image: mirror.gcr.io/minio/minio:latest
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -15,7 +15,7 @@ services:
       - shared-network
 
   db:
-    image: postgres:14.1-alpine
+    image: mirror.gcr.io/postgres:14.1-alpine
     restart: always
     environment:
       - POSTGRES_USER=postgres

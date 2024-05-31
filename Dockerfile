@@ -1,11 +1,11 @@
-FROM golang:latest AS builder
+FROM mirror.gcr.io/golang:latest AS builder
 
 WORKDIR /go/src/app
 COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o ./build/main ./cmd/data-service/main.go
 
-FROM python:3.12.3
+FROM mirror.gcr.io/python:3.12.3
 
 WORKDIR /app
 

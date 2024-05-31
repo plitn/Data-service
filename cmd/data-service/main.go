@@ -33,7 +33,7 @@ func main() {
 	defer dbInst.Close()
 	repo := repository.NewRepository(dbInst)
 	minioConn := fmt.Sprintf("%s:9000", minioHost)
-	dataService := data_service.NewDataService(repo, minioConn, "platon", "fancaran")
+	dataService := data_service.NewDataService(repo, minioConn, "R6OupGDd8kdz8VCnBp0Z", "aMTnjuPtU99DXj7Y444tzq86pDYoDY8w8PFVddLz")
 	handlerService := handler.New(dataService)
 	fmt.Println("services created")
 
